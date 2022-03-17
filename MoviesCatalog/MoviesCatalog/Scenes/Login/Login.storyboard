@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Calibri Bold.ttf">
+            <string>Calibri-Bold</string>
+        </array>
+        <array key="Calibri.ttf">
+            <string>Calibri</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="eEc-9A-WrQ">
+            <objects>
+                <viewController storyboardIdentifier="Login" id="kzW-kh-sai" customClass="LoginViewController" customModule="MoviesCatalog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vJn-DJ-QIO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beni Hatırla" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObS-We-fB8">
+                                <rect key="frame" x="124" y="401" width="178" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="OLw-aH-0dU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Qz-SP-urU">
+                                <rect key="frame" x="16" y="317" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="kqz-4D-5B7"/>
+                                </constraints>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kzW-kh-sai" id="5sd-IY-Meh"/>
+                                </connections>
+                            </textField>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7F5-jB-iiO">
+                                <rect key="frame" x="16" y="396" width="100" height="31"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning_icon_1" translatesAutoresizingMaskIntoConstraints="NO" id="vQr-Ks-YiC">
+                                        <rect key="frame" x="8" y="8" width="15" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="KR8-NJ-Zfz"/>
+                                            <constraint firstAttribute="height" constant="15" id="ykS-bo-VYX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cn3-is-wyk">
+                                        <rect key="frame" x="31" y="5" width="64" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="LC0-vc-l5h"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="cn3-is-wyk" firstAttribute="top" secondItem="7F5-jB-iiO" secondAttribute="top" constant="5" id="6Vq-01-zCJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="cn3-is-wyk" secondAttribute="trailing" constant="5" id="BeX-Ar-CJx"/>
+                                    <constraint firstItem="cn3-is-wyk" firstAttribute="leading" secondItem="vQr-Ks-YiC" secondAttribute="trailing" constant="8" id="ETp-k4-k2z"/>
+                                    <constraint firstAttribute="height" constant="31" id="NXx-Ua-GRh"/>
+                                    <constraint firstAttribute="bottom" secondItem="cn3-is-wyk" secondAttribute="bottom" constant="5" id="ZP0-fA-J0a"/>
+                                    <constraint firstAttribute="bottom" secondItem="vQr-Ks-YiC" secondAttribute="bottom" constant="8" id="qDX-bY-Y37"/>
+                                    <constraint firstItem="vQr-Ks-YiC" firstAttribute="top" secondItem="7F5-jB-iiO" secondAttribute="top" constant="8" id="seZ-VH-KVB"/>
+                                    <constraint firstItem="vQr-Ks-YiC" firstAttribute="leading" secondItem="7F5-jB-iiO" secondAttribute="leading" constant="8" id="t6k-GP-hzG"/>
+                                    <constraint firstAttribute="width" constant="100" id="wXd-Mu-vIm"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4QS-pE-Hng">
+                                <rect key="frame" x="16" y="449" width="343" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giriş Yap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DD4-hD-fG5">
+                                        <rect key="frame" x="8" y="8" width="327" height="32"/>
+                                        <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DD4-hD-fG5" secondAttribute="trailing" constant="8" id="6ev-wf-293"/>
+                                    <constraint firstItem="DD4-hD-fG5" firstAttribute="top" secondItem="4QS-pE-Hng" secondAttribute="top" constant="8" id="Oed-EC-Ole"/>
+                                    <constraint firstItem="DD4-hD-fG5" firstAttribute="leading" secondItem="4QS-pE-Hng" secondAttribute="leading" constant="8" id="caA-lh-kKL"/>
+                                    <constraint firstAttribute="height" constant="48" id="ebL-dT-meo"/>
+                                    <constraint firstAttribute="bottom" secondItem="DD4-hD-fG5" secondAttribute="bottom" constant="8" id="gHc-yA-VW8"/>
+                                </constraints>
+                            </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dq7-cx-60E">
+                                <rect key="frame" x="310" y="396" width="49" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="5m5-5h-EVz"/>
+                                    <constraint firstAttribute="height" constant="31" id="AWI-ev-tac"/>
+                                </constraints>
+                                <color key="onTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" red="0.0" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="cpz-aG-MjY">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login with Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yT7-2u-f0q">
+                                <rect key="frame" x="16" y="209" width="341" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="g6x-ue-wyN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="8Ul-TR-6Jx">
+                                <rect key="frame" x="16" y="263" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OWx-u0-7zZ"/>
+                                </constraints>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" textContentType="email"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kzW-kh-sai" id="8D0-pg-dV8"/>
+                                </connections>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video.fill.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oYL-OY-bdJ">
+                                <rect key="frame" x="104.5" y="32" width="165" height="97"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oYL-OY-bdJ" secondAttribute="height" multiplier="201:74" constant="-105.40540540540542" id="K6e-3O-PD4"/>
+                                    <constraint firstAttribute="height" constant="99" id="VxP-YH-qY3"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcf-Nj-OBs">
+                                <rect key="frame" x="18" y="505" width="341" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="341" id="Ded-tC-bRw"/>
+                                    <constraint firstAttribute="height" constant="25" id="Tda-3l-n3h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCx-1G-jRr">
+                                <rect key="frame" x="16" y="538" width="343" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login via Website" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqL-zc-IrA">
+                                        <rect key="frame" x="8" y="8" width="327" height="32"/>
+                                        <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="jqL-zc-IrA" secondAttribute="trailing" constant="8" id="3ci-Oq-POV"/>
+                                    <constraint firstAttribute="bottom" secondItem="jqL-zc-IrA" secondAttribute="bottom" constant="8" id="F0b-DA-XSj"/>
+                                    <constraint firstItem="jqL-zc-IrA" firstAttribute="top" secondItem="cCx-1G-jRr" secondAttribute="top" constant="8" id="W8D-Rw-KpX"/>
+                                    <constraint firstItem="jqL-zc-IrA" firstAttribute="leading" secondItem="cCx-1G-jRr" secondAttribute="leading" constant="8" id="nGE-sg-KXV"/>
+                                    <constraint firstAttribute="height" constant="48" id="uIn-0f-Agi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a6Z-M6-UlT"/>
+                        <color key="backgroundColor" red="0.2235293984" green="0.49019610879999997" blue="0.78823530669999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="cpz-aG-MjY" firstAttribute="centerX" secondItem="a6Z-M6-UlT" secondAttribute="centerX" id="2uE-tB-JY4"/>
+                            <constraint firstItem="4QS-pE-Hng" firstAttribute="top" secondItem="7F5-jB-iiO" secondAttribute="bottom" constant="22" id="3yA-9k-gnD"/>
+                            <constraint firstItem="1Qz-SP-urU" firstAttribute="trailing" secondItem="8Ul-TR-6Jx" secondAttribute="trailing" id="4p2-pw-Qem"/>
+                            <constraint firstItem="4QS-pE-Hng" firstAttribute="top" secondItem="Dq7-cx-60E" secondAttribute="bottom" constant="22" id="5zp-hR-t93"/>
+                            <constraint firstItem="ObS-We-fB8" firstAttribute="leading" secondItem="7F5-jB-iiO" secondAttribute="trailing" constant="8" id="629-fa-nBY"/>
+                            <constraint firstItem="bcf-Nj-OBs" firstAttribute="leading" secondItem="a6Z-M6-UlT" secondAttribute="leading" constant="18" id="7uu-Fp-zYk"/>
+                            <constraint firstItem="1Qz-SP-urU" firstAttribute="height" secondItem="8Ul-TR-6Jx" secondAttribute="height" id="AwT-62-llu"/>
+                            <constraint firstItem="8Ul-TR-6Jx" firstAttribute="trailing" secondItem="4QS-pE-Hng" secondAttribute="trailing" id="C2I-2n-8Sc"/>
+                            <constraint firstItem="a6Z-M6-UlT" firstAttribute="trailing" secondItem="bcf-Nj-OBs" secondAttribute="trailing" constant="16" id="C6V-gP-U2c"/>
+                            <constraint firstItem="a6Z-M6-UlT" firstAttribute="trailing" secondItem="8Ul-TR-6Jx" secondAttribute="trailing" constant="16" id="Cqy-tL-7I3"/>
+                            <constraint firstItem="yT7-2u-f0q" firstAttribute="leading" secondItem="a6Z-M6-UlT" secondAttribute="leading" constant="16" id="F1Y-01-2R7"/>
+                            <constraint firstItem="1Qz-SP-urU" firstAttribute="top" secondItem="8Ul-TR-6Jx" secondAttribute="bottom" constant="10" id="FIE-rs-mkB"/>
+                            <constraint firstItem="a6Z-M6-UlT" firstAttribute="trailing" secondItem="cCx-1G-jRr" secondAttribute="trailing" constant="16" id="HYj-Dg-Wv3"/>
+                            <constraint firstItem="7F5-jB-iiO" firstAttribute="top" secondItem="1Qz-SP-urU" secondAttribute="bottom" constant="35" id="JUL-85-YId"/>
+                            <constraint firstItem="cCx-1G-jRr" firstAttribute="top" secondItem="4QS-pE-Hng" secondAttribute="bottom" constant="41" id="Jfe-ub-LhN"/>
+                            <constraint firstItem="a6Z-M6-UlT" firstAttribute="trailing" secondItem="yT7-2u-f0q" secondAttribute="trailing" constant="18" id="KeU-8x-Cn4"/>
+                            <constraint firstItem="cCx-1G-jRr" firstAttribute="leading" secondItem="a6Z-M6-UlT" secondAttribute="leading" constant="16" id="N9x-Bi-lbL"/>
+                            <constraint firstItem="bcf-Nj-OBs" firstAttribute="top" secondItem="4QS-pE-Hng" secondAttribute="bottom" constant="8" id="NxB-Xs-je3"/>
+                            <constraint firstItem="Dq7-cx-60E" firstAttribute="leading" secondItem="ObS-We-fB8" secondAttribute="trailing" constant="8" id="Oqi-Ik-XS9"/>
+                            <constraint firstItem="a6Z-M6-UlT" firstAttribute="trailing" secondItem="Dq7-cx-60E" secondAttribute="trailing" constant="18" id="TYO-zv-R03"/>
+                            <constraint firstItem="1Qz-SP-urU" firstAttribute="leading" secondItem="8Ul-TR-6Jx" secondAttribute="leading" id="Uvc-0p-lPZ"/>
+                            <constraint firstItem="8Ul-TR-6Jx" firstAttribute="leading" secondItem="4QS-pE-Hng" secondAttribute="leading" id="VNL-Vp-cxZ"/>
+                            <constraint firstItem="oYL-OY-bdJ" firstAttribute="centerX" secondItem="a6Z-M6-UlT" secondAttribute="centerX" id="cVn-8z-uI2"/>
+                            <constraint firstItem="oYL-OY-bdJ" firstAttribute="top" secondItem="a6Z-M6-UlT" secondAttribute="top" constant="30" id="dgk-qw-d1H"/>
+                            <constraint firstItem="8Ul-TR-6Jx" firstAttribute="leading" secondItem="7F5-jB-iiO" secondAttribute="leading" id="gLX-mF-RQB"/>
+                            <constraint firstItem="7F5-jB-iiO" firstAttribute="leading" secondItem="a6Z-M6-UlT" secondAttribute="leading" constant="16" id="hFU-Cv-lU1"/>
+                            <constraint firstItem="ObS-We-fB8" firstAttribute="centerY" secondItem="Dq7-cx-60E" secondAttribute="centerY" id="knc-yt-TNh"/>
+                            <constraint firstItem="cpz-aG-MjY" firstAttribute="centerY" secondItem="vJn-DJ-QIO" secondAttribute="centerY" id="mGk-Yt-Hmg"/>
+                            <constraint firstItem="cpz-aG-MjY" firstAttribute="top" secondItem="8Ul-TR-6Jx" secondAttribute="bottom" constant="8" id="pDB-Af-pf9"/>
+                            <constraint firstItem="8Ul-TR-6Jx" firstAttribute="top" secondItem="yT7-2u-f0q" secondAttribute="bottom" constant="8" symbolic="YES" id="tYR-Bv-11X"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QVA-XE-Yll"/>
+                    <connections>
+                        <outlet property="ConstraintWarning" destination="wXd-Mu-vIm" id="ipo-9g-8L0"/>
+                        <outlet property="activityIndicator" destination="cpz-aG-MjY" id="PW4-pM-O9i"/>
+                        <outlet property="lblWarning" destination="cn3-is-wyk" id="22C-eV-HiG"/>
+                        <outlet property="txtEmail" destination="8Ul-TR-6Jx" id="Mpw-nt-jxV"/>
+                        <outlet property="txtPassword" destination="1Qz-SP-urU" id="zeh-HH-9Zm"/>
+                        <outlet property="uiSwitch" destination="Dq7-cx-60E" id="7Ny-wI-JqP"/>
+                        <outlet property="viewLogin" destination="4QS-pE-Hng" id="fto-oX-ROE"/>
+                        <outlet property="viewVisit" destination="cCx-1G-jRr" id="43s-cb-vdP"/>
+                        <outlet property="viewWarning" destination="7F5-jB-iiO" id="3u5-4a-WtV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PC7-xB-r0x" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-95.200000000000003" y="-92.203898050974516"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="video.fill.badge.plus" catalog="system" width="128" height="88"/>
+        <image name="warning_icon_1" width="45" height="42"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
