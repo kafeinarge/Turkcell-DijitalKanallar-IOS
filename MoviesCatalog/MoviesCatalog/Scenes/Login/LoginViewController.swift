@@ -135,6 +135,8 @@ extension LoginViewController {
         viewVisit.layer.cornerRadius = cornerRadius
         viewVisit.layer.masksToBounds = true
         viewVisit.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.actionVisit)))
+        
+        setTapRecognizer()
     }
     
     @objc private func actionVisit() {
@@ -163,6 +165,17 @@ extension LoginViewController {
 
    @objc private func setWarningViewHidden() {
         viewWarning.isHidden = true
+    }
+    
+    func setTapRecognizer() {
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.keyboardDismiss))
+        
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func keyboardDismiss() {
+        self.view.endEditing(true)
     }
     
 }

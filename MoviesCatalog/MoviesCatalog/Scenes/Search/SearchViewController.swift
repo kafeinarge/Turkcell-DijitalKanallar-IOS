@@ -36,7 +36,6 @@ public final class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         settings()
-        setTapRecognizer()
         viewModel.load()
     }
     
@@ -147,6 +146,8 @@ extension SearchViewController  {
         let statusbarView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: statusBarHeight))
         statusbarView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.view.addSubview(statusbarView)
+        
+        setTapRecognizer()
     }
     
     func setTapRecognizer() {

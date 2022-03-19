@@ -29,6 +29,7 @@ public final class LoginViewModel: LoginViewModelProtocol {
 
 extension LoginViewModel: LoginServiceDelegate {
     public func resultLogin(result: Result<LoginResponse>) {
+        notify(.setLoading(false))
         switch result {
         case .success(let response):
             let presentation = LoginPresentation.init(login: response.result)
@@ -40,12 +41,8 @@ extension LoginViewModel: LoginServiceDelegate {
             }
             
             notify(.showLogin(presentation))
-            notify(.setLoading(false))
-            DispatchQueue.main.async {
-                self.delegate?.navigate(to: .search)
-            }
+            self.delegate?.navigate(to: .search)
         case .failure(let error):
-            notify(.setLoading(false))
             delegate?.setWarningLabel(error.localizedDescription)
         }
     }
