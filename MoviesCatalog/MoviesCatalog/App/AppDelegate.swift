@@ -7,15 +7,28 @@
 
 import UIKit
 import CoreData
+import Reachability
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        app.router.start()
+        guard let reachability: Reachability = try? Reachability() else {
+            app.router.startWithTabBarOfflineMode()
+            return true
+        }
+        
+        switch reachability.connection {
+        case .wifi, .cellular:
+          app.router.start()
+        case .unavailable, .none:
+          app.router.startWithTabBarOfflineMode()
+        }
+        
         return true
     }
+    
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.

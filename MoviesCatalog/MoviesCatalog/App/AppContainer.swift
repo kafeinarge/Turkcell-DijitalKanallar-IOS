@@ -20,5 +20,6 @@ public final class AppContainer {
     let favoritedAddRemoveService = FavoritedRemoveAddService()
     let logoutManager = LogoutManager(service: LogoutService())
     let serviceCoreData = CoreDataManager()
+    let networkListener = NetworkListener()
     let imageCache = NSCache<AnyObject, AnyObject>()
 }

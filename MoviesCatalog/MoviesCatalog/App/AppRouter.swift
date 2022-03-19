@@ -17,7 +17,7 @@ final class AppRouter{
     
     func start() {
         DispatchQueue.main.async {
-            let rootViewController = UINavigationController(rootViewController: self.startWithLogin())
+            let rootViewController = UINavigationController(rootViewController: self.getLogin())
             self.window.rootViewController = rootViewController
             self.window.makeKeyAndVisible()
         }
@@ -25,7 +25,7 @@ final class AppRouter{
 }
 
 extension AppRouter {
-    func startWithLogin() -> UIViewController {
+    func getLogin() -> UIViewController {
         return LoginBuilder.make()
     }
     
@@ -35,6 +35,33 @@ extension AppRouter {
         tabbarController.viewControllers = getViewControllers().map{ UINavigationController(rootViewController: $0)}
         self.window.rootViewController = tabbarController
         self.window.makeKeyAndVisible()
+    }
+    
+    func startWithTabBarOfflineMode() {
+        self.window.rootViewController?.removeFromParent()
+        let tabbarController = UITabBarController()
+        tabbarController.viewControllers = getViewControllersOfflineMode().map{ UINavigationController(rootViewController: $0)}
+        self.window.rootViewController = tabbarController
+        self.window.makeKeyAndVisible()
+    }
+    
+    func getViewControllersOfflineMode() -> [UIViewController] {
+        var viewControllers = [UIViewController]()
+        
+        //Tabbar Item 1 WatchList
+        let tabbarItemWatchList = UITabBarItem(title: "WatchList", image: UIImage(systemName: "list.bullet"), selectedImage: UIImage(systemName: "list.bullet"))
+        
+        let viewControllerWatchList = WatchListBuilder.make()
+        viewControllerWatchList.tabBarItem = tabbarItemWatchList
+        viewControllers.append(viewControllerWatchList)
+        
+        //Tabbar Item 2 FavoriteList
+        let tabbarItemFavoriteList = UITabBarItem(title: "Favorites", image: UIImage(systemName: "heart.fill"), selectedImage: UIImage(systemName: "heart.fill"))
+        
+        let viewControllerFavoriteList = FavoriteListBuilder.make()
+        viewControllerFavoriteList.tabBarItem = tabbarItemFavoriteList
+        viewControllers.append(viewControllerFavoriteList)
+        return viewControllers
     }
     
     func getViewControllers() -> [UIViewController] {

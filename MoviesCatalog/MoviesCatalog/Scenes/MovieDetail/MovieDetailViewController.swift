@@ -85,7 +85,7 @@ extension MovieDetailViewController: MovieDetailViewModelDelegate {
         case .showError(let error):
             switch error {
             case .networkError(internal: let internalError):
-                showAlert(message: internalError.localizedDescription)
+                print(internalError.localizedDescription)
             case .serializationError(internal: let internalError):
                 print(internalError.localizedDescription)
             }

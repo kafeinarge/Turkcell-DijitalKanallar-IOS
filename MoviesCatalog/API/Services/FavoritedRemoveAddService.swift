@@ -16,8 +16,8 @@ public final class FavoritedRemoveAddService: FavoritedRemoveAddServiceProtocol 
         let api = API.favoriteAddRemove(mediaId: mediaId, favorite: favorite)
         let stringUrl = api.fullUrl
         
-        var request = try! URLRequest(url: URL(string: stringUrl).unwrap())
-        request.httpBody = api.parameters.getJSONData()
+        let urlComp =  api.parameters.getComponents(urlString: stringUrl)
+        var request = try! URLRequest(url: urlComp.url.unwrap())
         request.httpMethod = api.method
         request.allHTTPHeaderFields = api.headers
         

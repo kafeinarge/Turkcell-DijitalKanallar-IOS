@@ -90,11 +90,11 @@ extension API {
         case .accountDetail:
             return ["session_id": Constants.sessionId]
         case .favoriteAddRemove(mediaId: let mediaId, favorite: let favorite):
-            return ["account_id": "\(Constants.accountId)", "favorite": favorite,"mediaId": mediaId, "session_id": Constants.sessionId,]
+            return ["account_id": "\(Constants.accountId)", "favorite": "\(favorite)","mediaId": "\(mediaId)", "session_id": "\(Constants.sessionId)"]
         case .favoriteMovies:
             return ["session_id": Constants.sessionId, "account_id": "\(Constants.accountId)"]
         case .moviesAddRemove(mediaId: let mediaId, watchList: let watchList):
-            return ["session_id": Constants.sessionId, "account_id": "\(Constants.accountId)", "mediaId": mediaId, "watchList": watchList]
+            return ["session_id": "\(Constants.sessionId)", "account_id": "\(Constants.accountId)", "mediaId": "\(mediaId)", "watchList": "\(watchList)"]
         case .watchListMovies:
             return ["session_id": Constants.sessionId, "account_id": "\(Constants.accountId)"]
         }

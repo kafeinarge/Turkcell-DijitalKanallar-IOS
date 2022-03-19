@@ -22,10 +22,13 @@ public final class WatchListViewModel: WatchListViewModelProtocol {
     }
     
     public func loadMovies() {
-        notify(.updateTitle("Search"))
+        notify(.updateTitle("WatchList"))
         notify(.setLoading(true))
-        serviceCoreDataList.fetchList(protocolType: .watchList)
-        //service.loadMovies()
+        if app.networkListener.isConnected {
+            service.loadMovies()
+        } else {
+            serviceCoreDataList.fetchList(protocolType: .watchList)
+        }
     }
 }
 

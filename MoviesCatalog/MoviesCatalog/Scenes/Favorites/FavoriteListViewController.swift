@@ -51,12 +51,13 @@ extension FavoriteListViewController: FavoriteListViewModelDelegate {
             }
         case .updateTitle(let title):
             DispatchQueue.main.async {
-                self.navigationItem.title = title
+                self.navigationItem.title = app.networkListener.isConnected ? title : Constants.OfflineModeTitle
             }
         case .showError(let error):
             switch error {
             case .networkError(internal: let internalError):
-                showAlert(message: internalError.localizedDescription)
+                print(internalError.localizedDescription)
+                viewModel.loadMovies()
             case .serializationError(internal: let internalError):
                 print(internalError.localizedDescription)
             }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -55,6 +55,8 @@
 		D1A9923E27E28A5300D773BF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9923D27E28A5300D773BF /* CoreDataManager.swift */; };
 		D1A9924027E28AA300D773BF /* CoreDataContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9923F27E28AA300D773BF /* CoreDataContracts.swift */; };
 		D1A9924227E28BE900D773BF /* MovieCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9924127E28BE900D773BF /* MovieCore.swift */; };
+		D1A9924727E48CFB00D773BF /* NetworkListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9924627E48CFB00D773BF /* NetworkListener.swift */; };
+		D1A9924A27E4929200D773BF /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = D1A9924927E4929200D773BF /* Reachability */; };
 		D1B6BD4627DDFB9100890E10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B6BD4527DDFB9100890E10 /* AppDelegate.swift */; };
 		D1B6BD4F27DDFB9300890E10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B6BD4E27DDFB9300890E10 /* Assets.xcassets */; };
 		D1B6BD5227DDFB9300890E10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1B6BD5027DDFB9300890E10 /* LaunchScreen.storyboard */; };
@@ -133,6 +135,7 @@
 		D1A9923F27E28AA300D773BF /* CoreDataContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContracts.swift; sourceTree = "<group>"; };
 		D1A9924127E28BE900D773BF /* MovieCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCore.swift; sourceTree = "<group>"; };
 		D1A9924427E2C44200D773BF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D1A9924627E48CFB00D773BF /* NetworkListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkListener.swift; sourceTree = "<group>"; };
 		D1B6BD4227DDFB9100890E10 /* MoviesCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B6BD4527DDFB9100890E10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1B6BD4E27DDFB9300890E10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -168,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1A9924A27E4929200D773BF /* Reachability in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +181,7 @@
 		D1A991D727DFFF7300D773BF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D1A9924527E48CE400D773BF /* Network */,
 				D1A9923927E286E700D773BF /* CoreData */,
 				D1A991D827DFFFF700D773BF /* Login */,
 				D1A9923627E25BF300D773BF /* Logout */,
@@ -288,6 +293,14 @@
 				D1A9924427E2C44200D773BF /* README.md */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		D1A9924527E48CE400D773BF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D1A9924627E48CFB00D773BF /* NetworkListener.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		D1B6BD3927DDFB9100890E10 = {
@@ -449,6 +462,9 @@
 			dependencies = (
 			);
 			name = MoviesCatalog;
+			packageProductDependencies = (
+				D1A9924927E4929200D773BF /* Reachability */,
+			);
 			productName = MoviesCatalog;
 			productReference = D1B6BD4227DDFB9100890E10 /* MoviesCatalog.app */;
 			productType = "com.apple.product-type.application";
@@ -476,6 +492,9 @@
 				Base,
 			);
 			mainGroup = D1B6BD3927DDFB9100890E10;
+			packageReferences = (
+				D1A9924827E4929200D773BF /* XCRemoteSwiftPackageReference "Reachability" */,
+			);
 			productRefGroup = D1B6BD4327DDFB9100890E10 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -540,6 +559,7 @@
 				D1A9921927E1206800D773BF /* MovieDetailContracts.swift in Sources */,
 				D1B6BD7527DE7BCD00890E10 /* MovieDetailResponse.swift in Sources */,
 				D1B6BD8C27DFC89D00890E10 /* Login.swift in Sources */,
+				D1A9924727E48CFB00D773BF /* NetworkListener.swift in Sources */,
 				D1A991DA27E0000200D773BF /* LoginContracts.swift in Sources */,
 				D1B6BD8427DE96E800890E10 /* AppContainer.swift in Sources */,
 				D1A9923E27E28A5300D773BF /* CoreDataManager.swift in Sources */,
@@ -767,6 +787,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D1A9924827E4929200D773BF /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D1A9924927E4929200D773BF /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1A9924827E4929200D773BF /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D1A9923A27E2872A00D773BF /* MovieCoreModel.xcdatamodeld */ = {

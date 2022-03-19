@@ -24,8 +24,11 @@ public final class FavoriteListViewModel: FavoriteListViewModelProtocol {
     public func loadMovies() {
         notify(.updateTitle("Favorites"))
         notify(.setLoading(true))
-        serviceCoreDataList.fetchList(protocolType: .favoriteList)
-        //service.loadFavoritedMovies()
+        if app.networkListener.isConnected {
+            service.loadFavoritedMovies()
+        } else {
+            serviceCoreDataList.fetchList(protocolType: .favoriteList)
+        }
     }
 }
 

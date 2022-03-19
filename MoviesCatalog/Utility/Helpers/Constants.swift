@@ -23,5 +23,5 @@ public enum Constants {
     /// Message Errors
     public static let appDelegateMessageError = "AppDelegate was not found"
     public static let deleteMessageError = "Movie was deleted successfully"
-    
+    public static let OfflineModeTitle = "Offline Mode Active"
 }
